@@ -11,7 +11,7 @@ import { salvarHistorico } from './src/services/appCrud';
 const mqtt = new MQTTService();
 
 export default function App() {
-  const [screen, setScreen] = useState('home'); // 'home' | 'history'
+  const [screen, setScreen] = useState('home'); //'home' | 'history'
   const [isConnected, setIsConnected] = useState(false);
   const [showError, setShowError] = useState(false);
   const [isLightOn, setIsLightOn] = useState(false);
@@ -36,7 +36,7 @@ export default function App() {
     setShowError(false);
     mqtt.connectBroker(
       mqttConfig,
-      // onMessage: atualiza estado E persiste no json-server
+      //onMessage: atualiza estado E persiste no json-server
       async (topic, message) => {
         if (topic === 'casa/temp') {
           const val = parseFloat(message);
@@ -53,14 +53,14 @@ export default function App() {
           await salvarHistorico('luz', message);
         }
       },
-      // onConnect
+      //onConnect
       () => {
         setIsConnected(true);
         mqtt.subscribe('casa/temp');
         mqtt.subscribe('casa/umid');
         mqtt.subscribe('casa/luz');
       },
-      // onFailure
+      //onFailure
       () => {
         setIsConnected(false);
         setShowError(true);
@@ -79,11 +79,13 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+
       {/* Header */}
       <View style={styles.headerRow}>
         <Text style={styles.header}>Smart Home IoT</Text>
 
         <View style={styles.headerRight}>
+          
           {/* Indicador de conexão */}
           <View style={[styles.dot, { backgroundColor: isConnected ? '#27AE60' : '#E74C3C' }]} />
 

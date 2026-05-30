@@ -20,6 +20,7 @@ export default class MQTTService {
    * @param {function} onConnect  - () => void
    * @param {function} onFailure  - (err) => void
    */
+  
   connectBroker(config, onMessage, onConnect, onFailure) {
     const { host, port, path, user, pass, clientId } = config;
 

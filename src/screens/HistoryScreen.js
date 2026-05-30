@@ -1,21 +1,12 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import {
-  StyleSheet,
-  View,
-  Text,
-  FlatList,
-  TouchableOpacity,
-  ActivityIndicator,
-  Alert,
-  RefreshControl,
-} from 'react-native';
+import { StyleSheet, View, Text, FlatList, TouchableOpacity, ActivityIndicator, Alert, RefreshControl, } from 'react-native';
 import { MaterialCommunityIcons as Icon } from '@expo/vector-icons';
 import { buscarHistorico, limparHistorico } from '../services/appCrud';
 
 const ICON_MAP = {
   temp: { icon: 'thermometer', color: '#E74C3C', label: 'Temperatura', unit: '°C' },
   umid: { icon: 'water-percent', color: '#3498DB', label: 'Umidade', unit: '%' },
-  luz:  { icon: 'lightbulb-on', color: '#F1C40F', label: 'Luz', unit: '' },
+  luz: { icon: 'lightbulb-on', color: '#F1C40F', label: 'Luz', unit: '' },
 };
 
 function formatTimestamp(iso) {
@@ -86,6 +77,7 @@ export default function HistoryScreen({ onBack }) {
 
   return (
     <View style={styles.container}>
+
       {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity onPress={onBack} style={styles.backBtn} activeOpacity={0.7}>

@@ -5,6 +5,7 @@ const API = process.env.EXPO_PUBLIC_API_URL;
  * @param {'temp'|'umid'|'luz'} tipo - tipo do dado
  * @param {number|string} valor - valor recebido do broker
  */
+
 export async function salvarHistorico(tipo, valor) {
   try {
     const registro = {
@@ -31,6 +32,7 @@ export async function salvarHistorico(tipo, valor) {
  * Busca todos os registros do histórico, do mais recente ao mais antigo.
  * @param {number} limite - máximo de registros (padrão 100)
  */
+
 export async function buscarHistorico(limite = 100) {
   try {
     const response = await fetch(
@@ -49,6 +51,7 @@ export async function buscarHistorico(limite = 100) {
  * Deleta todo o histórico — percorre e remove item a item
  * (json-server não suporta DELETE em massa nativamente).
  */
+
 export async function limparHistorico() {
   try {
     const registros = await buscarHistorico(1000);

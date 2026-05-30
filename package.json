@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
-    "@expo/vector-icons": "^14.0.0",
+    "@expo/vector-icons": "^15.0.3",
     "@react-native-async-storage/async-storage": "^2.2.0",
     "babel-preset-expo": "^54.0.10",
     "concurrently": "^8.2.2",
@@ -16,7 +16,7 @@
     "react-native-circular-progress-indicator": "^4.4.2",
     "react-native-gesture-handler": "~2.28.0",
     "react-native-reanimated": "4.1.1",
-    "react-native-svg": "^15.12.1",
+    "react-native-svg": "15.12.1",
     "react-native-worklets": "0.5.1"
   },
   "scripts": {
@@ -25,8 +25,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "server": "json-server --watch db.json --port 3000",
-    "tunnel": "ngrok http 3000",
-    "dev": "concurrently \"npm run server\" \"npm run start\""
+    "tunnel": "ngrok http 3000"
   },
   "private": true
 }
