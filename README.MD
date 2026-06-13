@@ -195,5 +195,6 @@ npm run tunnel  # Inicia o ngrok apontando para a porta 3000
 - Cada vez que o `npm run tunnel` é executado, o ngrok gera uma **nova URL**. Sempre atualize o `.env` e reinicie o Expo após isso.
 - O arquivo `.env` não deve ser versionado. Ele já está no `.gitignore`.
 
-## Vídeos Demonstrativos: https://youtu.be/ZgGyxCa4qq8 
-                          & https://youtu.be/HHp-Nadm33c
+## Vídeos Demonstrativos: 
+https://youtu.be/ZgGyxCa4qq8 
+& https://youtu.be/HHp-Nadm33c
