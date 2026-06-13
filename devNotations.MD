@@ -22,3 +22,4 @@ Na prática, se você chamar a função com um valor errado, o editor sublinha:
 salvarHistorico('temperatura', 25) //sublinhado, 'temperatura' não está na lista
 salvarHistorico('temp', 25)        //ok
 ```
+

@@ -3,6 +3,7 @@
 # dependencies
 node_modules/
 .env
+dashboard-graficos-context.md
 
 # Expo
 .expo/

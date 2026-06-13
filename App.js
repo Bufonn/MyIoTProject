@@ -6,12 +6,13 @@ import StatusModal from './src/components/StatusModal';
 import LightControl from './src/components/LightControl';
 import Gauges from './src/components/Gauges';
 import HistoryScreen from './src/screens/HistoryScreen';
+import AnalyticsScreen from './src/screens/AnalyticsScreen';
 import { salvarHistorico } from './src/services/appCrud';
 
 const mqtt = new MQTTService();
 
 export default function App() {
-  const [screen, setScreen] = useState('home'); //'home' | 'history'
+  const [screen, setScreen] = useState('home'); //'home' | 'history' | 'analytics'
   const [isConnected, setIsConnected] = useState(false);
   const [showError, setShowError] = useState(false);
   const [isLightOn, setIsLightOn] = useState(false);
@@ -76,6 +77,9 @@ export default function App() {
   if (screen === 'history') {
     return <HistoryScreen onBack={() => setScreen('home')} />;
   }
+  if (screen === 'analytics') {
+    return <AnalyticsScreen onBack={() => setScreen('home')} />;
+  }
 
   return (
     <View style={styles.container}>
@@ -97,6 +101,15 @@ export default function App() {
           >
             <Icon name="history" size={20} color="#FFF" />
             <Text style={styles.historyBtnText}>Histórico</Text>
+          </TouchableOpacity>
+          {/* Botão Gráficos */}
+          <TouchableOpacity
+            style={styles.historyBtn}
+            onPress={() => setScreen('analytics')}
+            activeOpacity={0.7}
+          >
+            <Icon name="chart-bar" size={20} color="#FFF" />
+            <Text style={styles.historyBtnText}>Gráficos</Text>
           </TouchableOpacity>
         </View>
       </View>
