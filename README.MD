@@ -194,3 +194,5 @@ npm run tunnel  # Inicia o ngrok apontando para a porta 3000
 - O **MQTT.fx** e o **app** são clientes independentes do mesmo broker. O app pode ser iniciado antes ou depois do MQTT.fx sem problemas.
 - Cada vez que o `npm run tunnel` é executado, o ngrok gera uma **nova URL**. Sempre atualize o `.env` e reinicie o Expo após isso.
 - O arquivo `.env` não deve ser versionado. Ele já está no `.gitignore`.
+
+## Vídeo Demonstrativo: https://youtu.be/ZgGyxCa4qq8
